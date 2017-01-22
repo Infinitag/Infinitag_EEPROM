@@ -1,1 +1,1 @@
-# Infinitag_EEPROM
+# EEPROMManager
