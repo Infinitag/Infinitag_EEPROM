@@ -15,34 +15,34 @@
 class EEPROMManager
 {
 public:
-	template <typename T>
-	EEPROMEntry<T> allocateEntry()
-	{
-		int size = sizeof(T);
-		EEPROMEntry<T> entry(size, currentAddress);
-		currentAddress += size;
-		return(entry);
-	}
-	
-	static EEPROMManager* the() 
-	{
-		if(!instance)
-		{
-			instance = new EEPROMManager();
-		}			
-		return instance;
-	}
-	
-private:	
+  template <typename T>
+  EEPROMEntry<T> allocateEntry()
+  {
+    int size = sizeof(T);
+    EEPROMEntry<T> entry(size, currentAddress);
+    currentAddress += size;
+    return(entry);
+  }
+  
+  static EEPROMManager* the() 
+  {
+    if(!instance)
+    {
+      instance = new EEPROMManager();
+    }      
+    return instance;
+  }
+  
+private:  
     static EEPROMManager* instance;
-	
-	EEPROMManager()
-		: currentAddress(0)
-	{
-		
-	}
-	
-	int currentAddress;
+  
+  EEPROMManager()
+    : currentAddress(0)
+  {
+    
+  }
+  
+  int currentAddress;
 };
 
 #endif //INFINITAG_EEPROM_MANAGER_H
